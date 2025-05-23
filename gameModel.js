@@ -10,7 +10,7 @@ const gameModel = {
 
     startGame: function() {
         this.score = 0;
-        this.timer = 5;
+        this.timer = 30;
         this.activeMoles = 0;
         this.moles.fill(false);
         this.updateState();
@@ -39,7 +39,7 @@ const gameModel = {
     },
 
     // logic to spawn a mole randomly ensureing it's not duplicating at a same place twice
-    spawnMole: function() {
+  spawnMole: function() {
         if (this.activeMoles >= 3) return;
 
         const availableBlocks = this.moles
@@ -51,7 +51,18 @@ const gameModel = {
         const randomIndex = availableBlocks[Math.floor(Math.random() * availableBlocks.length)];
         this.moles[randomIndex] = true;
         this.activeMoles++;
+
+        // Display the mole and set the timeout to remove it after 2 seconds if not clicked
         gameController.displayMole(randomIndex);
+
+        // Mole disappears after 2 seconds if not clicked
+        setTimeout(() => {
+            if (this.moles[randomIndex]) {
+                this.moles[randomIndex] = false;
+                this.activeMoles--;
+                gameController.removeMole(randomIndex);
+            }
+        }, 2000);  // 2000 ms = 2 seconds
     },
     // function to remove mole
     removeMole: function(index) {
