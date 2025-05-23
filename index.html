@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whac-a-Mole</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Whac-a-Mole</h1>
+        <div id="score">Score: 0</div>
+        <button id="startButton">Start Game</button>
+    </header>
+
+    <div id="gameBoard">
+        <!-- 12 game blocks (3 rows of 4 blocks) -->
+        <div class="block" id="block0"></div>
+        <div class="block" id="block1"></div>
+        <div class="block" id="block2"></div>
+        <div class="block" id="block3"></div>
+        <div class="block" id="block4"></div>
+        <div class="block" id="block5"></div>
+        <div class="block" id="block6"></div>
+        <div class="block" id="block7"></div>
+        <div class="block" id="block8"></div>
+        <div class="block" id="block9"></div>
+        <div class="block" id="block10"></div>
+        <div class="block" id="block11"></div>
+    </div>
+
+    <div id="timer">Time Left: 30</div>
+
+    <!-- Include the Model, View, and Controller JS files in the right order -->
+    <script src="gameModel.js"></script>      <!-- Model file -->
+    <script src="gameView.js"></script>       <!-- View file -->
+    <script src="gameController.js"></script> <!-- Controller file -->
+</body>
+</html>

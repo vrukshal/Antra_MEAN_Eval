@@ -1,0 +1,74 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+#score {
+    font-size: 1.5rem;
+}
+
+#startButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(3, 200px);
+    gap: 20px;
+    margin: 40px auto;
+}
+
+/* Styling for the block */
+.block {
+    width: 200px;
+    height: 200px;
+    border: 2px solid brown;  /* Border for the block */
+    position: relative;
+    border-radius: 50%;  /* Makes the block circular */
+    overflow: hidden; /* Ensures the mole image doesn't overflow the circle */
+}
+
+/* Styling for the mole image */
+.mole {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures the image covers the whole area while maintaining its aspect ratio */
+    border-radius: 50%;  /* Makes the mole image circular */
+    transition: transform 0.2s ease-in-out;
+}
+
+.mole:hover {
+    transform: scale(1.2);  /* Slight scale effect when hovering over the mole */
+}
+
+
+#timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+}
+
+
